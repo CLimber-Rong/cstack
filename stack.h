@@ -10,7 +10,6 @@
 #ifndef STACK_H
 #define STACK_H
 
-#include<stdio.h>
 #include<stdlib.h>
 
 typedef int (*STACK_VISIT)(void*);					//遍历的函数指针接口
@@ -43,7 +42,6 @@ int StackTraverse(STACK* stack,STACK_VISIT visit);	//从栈底到栈顶一次调用visit函
 STACK* InitStack() {
 	STACK* stack = (STACK*)calloc(1,sizeof(STACK));
 	stack->base = (stack_node*)calloc(1,sizeof(stack_node));
-//	stack->top  = (stack_node*)calloc(1,sizeof(stack_node));
 	if(stack->base==NULL) {
 		return NULL;
 	}
